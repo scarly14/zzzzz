@@ -1,0 +1,11 @@
+h1 {
+    font-size: 3em;
+    color: rgb(107, 86, 86);
+    margin: 15px;
+}
+
+button {
+    position: absolute;
+    color: rgb(231, 68, 96);
+}
+

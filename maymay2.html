@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposal</title>
+    <style>
+        /* CSS styles here */
+
+        @keyframes fadeInOut {
+            0% { opacity: 0; }
+            25% { opacity: 1; }
+            75% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        #responseMessage {
+            font-size: 30px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        h1 {
+            font-size: 50px;
+            color: brown;
+            font-style: italic;
+        }
+
+        .meme-container {
+            display: none;
+        }
+
+        .meme-container.show {
+            display: block;
+        }
+
+        .meme-container img {
+            max-width: 100%;
+            margin: 10px;
+        }
+
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background-color: rgb(255, 254, 253);
+            margin: 5cm;
+            padding: 0;
+        }
+
+        main {
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: none;
+            margin: 0 auto; /* Center the main content */
+        }
+
+        header {
+            text-align: center; /* Center the text within the header */
+        }
+
+        #response {
+            text-align: center; /* Center the buttons and response message */
+        }
+
+        .buttons {
+            text-align: center;
+            margin: 20px; /* Add space around the buttons */
+        }
+
+        #yesButton, #noButton {
+        display: inline-block;
+        margin: 10px;
+        color: #0e0909;
+        background-color: #4CAF50; /* Green for "Yes" button */
+        border: none;
+        border-radius: 50px;
+        padding: 10px 20px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 24px;
+        font-style: italic;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    #yesButton:hover, #noButton:hover {
+        background-color: #45a049; /* Darker green on hover */
+    }
+
+    #noButton {
+        background-color: #f44336; /* Red for "No" button */
+    }
+
+    #noButton:hover {
+        background-color: #d32f2f; /* Darker red on hover */
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Will you spend your whole time with me?</h1>
+        <img alt="gif Image" src="https://i.ibb.co/x32kFbj/Fbcuteboy-GIF-Fbcuteboy-Discover-Share-GIFs.gif">
+    </header>
+    <main>
+        <section id="response">
+            <div class="buttons">
+                <button type="button" id="yesButton">Yes</button>
+                <button type="button" id="noButton">No</button>
+            </div>
+            <p id="responseMessage"></p>
+            <!-- Meme container for "Yes" -->
+            <div id="memeContainerYes" class="meme-container">
+                <!-- Place your 5 "Yes" meme images here -->
+                <img src="https://i.postimg.cc/qMZN3cs0/6165eb6380ca4f44d3b609d9852d7402.jpg" alt="Meme Image - Yes">
+                <img src="https://i.postimg.cc/s2SYDHZv/c66368c7ff2808f20bb3088f6b916a4f.jpg" alt="Meme Image - Yes">
+                <img src="https://i.postimg.cc/qMPgMJcx/2e4ebda492a1cfa91935ae451a8be8e5.jpg" alt="Meme Image - Yes">
+                <img src="https://i.postimg.cc/bJSwj4GB/8a5057f7ead556c574c9a7279ff93d66.jpg" alt="Meme Image - Yes">
+                <img src="https://i.postimg.cc/TYdhK7Bp/3c13476f474bcaede1a017bff35d0855.jpg" alt="Meme Image - Yes">
+            </div>
+            <!-- Meme container for "No" -->
+            <div id="memeContainerNo" class="meme-container">
+                <!-- Place your 5 "No" meme images here -->
+                <img src="no_meme1.jpg" alt="Meme Image - No">
+                <img src="no_meme2.jpg" alt="Meme Image - No">
+                <img src="no_meme3.jpg" alt="Meme Image - No">
+                <img src="no_meme4.jpg" alt="Meme Image - No">
+                <img src="no_meme5.jpg" alt="Meme Image - No">
+            </div>
+        </section>
+    </main>
+    <script>
+        const yesButton = document.getElementById("yesButton");
+        const noButton = document.getElementById("noButton");
+        const memeContainerYes = document.getElementById("memeContainerYes");
+        const memeContainerNo = document.getElementById("memeContainerNo");
+        const responseMessage = document.getElementById("responseMessage");
+
+        yesButton.addEventListener("click", function() {
+            responseMessage.textContent = " as u should!😤 ";
+            showMemes("Yes");
+        });
+
+        noButton.addEventListener("click", function() {
+            responseMessage.textContent = "Change your answer to YES 😊🔫";
+            showMemes("No");
+        });
+
+        function showMemes(container) {
+            if (container === "Yes") {
+                memeContainerYes.classList.add("show");
+                memeContainerNo.classList.remove("show");
+            } else if (container === "No") {
+                memeContainerNo.classList.add("show");
+                memeContainerYes.classList.remove("show");
+            }
+        }
+
+        noButton.addEventListener("mouseover", function() {
+            noButton.style.position = "absolute";
+            noButton.style.top = Math.random() * window.innerHeight + "px";
+            noButton.style.left = Math.random() * window.innerWidth + "px";
+        });
+    </script>
+</body>
+</html>     
